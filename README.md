@@ -5,3 +5,5 @@ Java for Web project for Geekhub, Season 8
 ##########################################
 
 Lesson 1 - Intro
+
+Mirroring test
