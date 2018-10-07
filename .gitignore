@@ -5,5 +5,5 @@ build
 classes
 .gradle
 
-src
+main
 libs
