@@ -36,7 +36,8 @@ public class PrimeNumbersCalculatorTest {
         return new Object[][]{
                 {3, new int[]{2}},
                 {5, new int[]{2, 3}},
-                {20, new int[]{2, 3, 5, 7, 11, 13, 17, 19}},
+                {19, new int[]{2, 3, 5, 7, 11, 13, 17}},
+                {20, new int[]{2, 3, 5, 7, 11, 13, 17, 19}}
         };
     }
 
