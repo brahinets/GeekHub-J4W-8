@@ -21,10 +21,10 @@ public class StringUtilsTest {
     }
 
     @Test(dataProvider = "startWithNonEnglishLetter")
-    public void toggleCaseShouldReturnStringAsIsWhenFirstCharIsNotEnglishLetter(String str, String expectedResult) {
+    public void toggleCaseShouldReturnStringAsIsWhenFirstCharIsNotEnglishLetter(String str) {
         String result = StringUtils.toggleCase(str);
 
-        Assert.assertEquals(result, expectedResult);
+        Assert.assertEquals(result, str);
     }
 
     @Test(dataProvider = "startWithLowerCaseData")
@@ -43,13 +43,12 @@ public class StringUtilsTest {
 
     @DataProvider
     private static Object[][] startWithNonEnglishLetter() {
-
         return new Object[][]{
-                {"123abc", "123abc"},
-                {"123abc", "123abc"},
-                {" abc", " abc"},
-                {"-ABC", "-ABC"},
-                {"~!@#$%^&*()_+", "~!@#$%^&*()_+"}
+                {"123abc"},
+                {"123abc"},
+                {" abc"},
+                {"-ABC"},
+                {"~!@#$%^&*()_+"}
         };
     }
 
