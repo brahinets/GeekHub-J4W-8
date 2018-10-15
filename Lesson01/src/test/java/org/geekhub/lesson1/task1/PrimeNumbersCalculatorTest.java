@@ -1,6 +1,5 @@
-package org.geekgub.lesson1.task1;
+package org.geekhub.lesson1.task1;
 
-import org.geekhub.lesson1.task1.PrimeNumbersCalculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

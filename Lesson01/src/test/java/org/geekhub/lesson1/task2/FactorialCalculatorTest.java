@@ -1,6 +1,5 @@
-package org.geekgub.lesson1.task2;
+package org.geekhub.lesson1.task2;
 
-import org.geekhub.lesson1.task2.FactorialCalculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
