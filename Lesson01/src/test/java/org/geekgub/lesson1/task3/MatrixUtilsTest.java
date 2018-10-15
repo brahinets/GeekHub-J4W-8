@@ -2,6 +2,7 @@ package org.geekgub.lesson1.task3;
 
 import org.geekhub.lesson1.task3.MatrixUtils;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class MatrixUtilsTest {
@@ -47,13 +48,24 @@ public class MatrixUtilsTest {
         Assert.assertEquals(actualRoots, expectedRoots);
     }
 
-    @Test
-    public void shouldSumRootsOfCellsWithIntegerSquareRootValue() {
-        int[][] matrix = MatrixUtils.createMatrix(6, 5);
-        MatrixUtils.fillMatrix(matrix, 1);
+    @Test(dataProvider = "sumRootsOfCellsWithIntegerSquareRootValueDataProvider")
+    public void shouldSumRootsOfCellsWithIntegerSquareRootValue(int rows, int cols, int initValue, int expectedResult) {
+        int[][] matrix = MatrixUtils.createMatrix(rows, cols);
+        MatrixUtils.fillMatrix(matrix, initValue);
 
         int sum = MatrixUtils.sumRootsOfCellsWithIntegerSquareRoot(matrix);
 
-        Assert.assertEquals(sum, 5 + 4 + 3 + 2 + 1);
+        Assert.assertEquals(sum, expectedResult);
+    }
+
+    @DataProvider
+    private Object[][] sumRootsOfCellsWithIntegerSquareRootValueDataProvider() {
+        return new Object[][]{
+                {0, 0, 777, 0},
+                {1, 1, 900, 30},
+                {1, 10, 5, 3},
+                {6, 5, 1, 5 + 4 + 3 + 2 + 1},
+                {6, 5, 2, 5 + 4 + 3 + 2},
+        };
     }
 }
