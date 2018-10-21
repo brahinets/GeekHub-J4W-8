@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = 'UTF-8'
+
+    sourceCompatibility = 1.11
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.10.2'
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+project.test.dependsOn {
+    rootProject.subprojects.collect {
+        it.tasks.getByName 'test'
+    }
+}
