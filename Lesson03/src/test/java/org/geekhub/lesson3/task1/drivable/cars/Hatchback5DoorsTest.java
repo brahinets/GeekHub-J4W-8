@@ -23,7 +23,7 @@ public class Hatchback5DoorsTest {
     }
 
     @Test
-    public void carHas3Doors() {
+    public void carHas5Doors() {
         assertEquals(car.getNumberOfDoors(), 5);
     }
 
