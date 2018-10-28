@@ -23,3 +23,9 @@ project.test.dependsOn {
         it.tasks.getByName 'test'
     }
 }
+
+ext {
+    libs = [
+            test : 'org.testng:testng:7.0.0-beta1'
+    ]
+}
