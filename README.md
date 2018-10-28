@@ -9,3 +9,5 @@ Lesson 1 - Intro
 Lesson 2 - Built-in Classes
 
 Lesson 3 - Object Oriented Programming
+
+Lesson 4 - Exceptions
