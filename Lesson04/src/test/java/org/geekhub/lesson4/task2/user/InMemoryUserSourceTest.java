@@ -5,11 +5,11 @@ import org.testng.annotations.Test;
 
 import java.util.Optional;
 
-public class UserSourceTest {
+public class InMemoryUserSourceTest {
 
     @Test
-    public void shouldReturnEmpty_whenUserByUsernameNotFound() {
-        InMemoryUserSource emptyUserSource = new InMemoryUserSource();
+    public void shouldReturnEmpty_whenUserNotFoundByUsername() {
+        UserSource emptyUserSource = new InMemoryUserSource();
 
         Optional<User> user = emptyUserSource.find("Username");
 
@@ -17,8 +17,8 @@ public class UserSourceTest {
     }
 
     @Test
-    public void shouldReturnUser_whenUserByUsernameFound() {
-        InMemoryUserSource userSource = new InMemoryUserSource(
+    public void shouldReturnUser_whenUserFoundByUsername() {
+        UserSource userSource = new InMemoryUserSource(
             new User(1, "Username", "Password")
         );
 
