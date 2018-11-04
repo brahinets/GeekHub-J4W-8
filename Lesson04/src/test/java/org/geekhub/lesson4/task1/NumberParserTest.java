@@ -19,6 +19,7 @@ public class NumberParserTest {
             {"-+=12"},
             {"-!123"},
             {"=123"},
+            {"12+3"},
             {"abc"},
             {"!qwe"},
             {"1qwe"}
