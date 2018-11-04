@@ -10,7 +10,11 @@ public class NumberParserTest {
     public static Object[][] notNumberString() {
         return new Object[][]{
             {null},
+            {"+"},
+            {"-"},
             {""},
+            {" "},
+            {"    "},
             {"\r"},
             {"\n"},
             {"\t"},
