@@ -10,7 +10,12 @@ allprojects {
     compileJava.options.encoding = 'UTF-8'
     compileTestJava.options.encoding = 'UTF-8'
 
-    sourceCompatibility = 1.11
+    sourceCompatibility = 1.10
+    targetCompatibility = 1.10
+
+    clean {
+        delete 'build', 'out', 'classes'
+    }
 }
 
 task wrapper(type: Wrapper) {
