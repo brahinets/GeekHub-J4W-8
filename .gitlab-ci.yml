@@ -1,0 +1,11 @@
+image: java:11
+
+stages:
+  - test
+
+test:
+  stage: test
+  except:
+    - prod
+  script:
+    - ./gradlew clean test --stacktrace
