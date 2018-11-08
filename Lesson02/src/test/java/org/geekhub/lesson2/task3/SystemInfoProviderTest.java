@@ -76,6 +76,6 @@ public class SystemInfoProviderTest {
     }
 
     private boolean nonEmpty(String val) {
-        return Objects.nonNull(val) && !val.isBlank();
+        return Objects.nonNull(val) && !val.matches("^[\\s]*$");
     }
 }
