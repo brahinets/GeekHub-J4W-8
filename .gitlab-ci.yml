@@ -8,4 +8,4 @@ test:
   except:
     - prod
   script:
-    - ./gradlew clean test --stacktrace
+    - ./gradlew clean test --info
