@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class CarPropertiesTest {
 
@@ -47,7 +48,7 @@ public class CarPropertiesTest {
         Car car1 = CarFactory.create("SpeedX", 700, "Tesla", Color.BLUE);
         Car car2 = CarFactory.create("Torch", 700, "Tesla", new Color(0, 0, 255));
 
-        HashSet<Car> cars = new HashSet<>();
+        Set<Car> cars = new HashSet<>();
         cars.add(car1);
         cars.add(car2);
 
@@ -59,7 +60,7 @@ public class CarPropertiesTest {
         Car car1 = CarFactory.create("SpeedX", 700, "Tesla", Color.BLUE);
         Car car2 = CarFactory.create("Torch", 600, "Tesla", new Color(0, 0, 255));
 
-        HashSet<Car> cars = new HashSet<>();
+        Set<Car> cars = new HashSet<>();
         cars.add(car1);
         cars.add(car2);
 
