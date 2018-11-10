@@ -7,7 +7,7 @@ public class CarFactoryTest {
     @Test
     public void twoCarsWithSameNamePowerModelColor_shouldBeEqual() {
         Car car1 = CarFactory.create("Scorch", 800, "Dodge", Color.RED);
-        Car car2 = CarFactory.create("Scorch", 800, "Dodge", Color.RED);
+        Car car2 = CarFactory.create("Scorch", 800, "Dodge", new Color(255, 0, 0));
 
         Assert.assertEquals(car1, car2);
     }
@@ -15,7 +15,7 @@ public class CarFactoryTest {
     @Test
     public void twoCarsWithDifferentNameAndSamePowerModelColor_shouldBeEqual() {
         Car car1 = CarFactory.create("Scorch", 800, "Dodge", Color.RED);
-        Car car2 = CarFactory.create("Swoosh", 800, "Dodge", Color.RED);
+        Car car2 = CarFactory.create("Swoosh", 800, "Dodge", new Color(255, 0, 0));
 
         Assert.assertEquals(car1, car2);
     }
@@ -23,7 +23,7 @@ public class CarFactoryTest {
     @Test
     public void twoCarsWithDifferentPower_shouldBeNotEqual() {
         Car car1 = CarFactory.create("Racer", 700, "Dodge", Color.RED);
-        Car car2 = CarFactory.create("Racer", 800, "Dodge", Color.RED);
+        Car car2 = CarFactory.create("Racer", 800, "Dodge", new Color(255, 0, 0));
 
         Assert.assertNotEquals(car1, car2);
     }
@@ -31,7 +31,7 @@ public class CarFactoryTest {
     @Test
     public void twoCarsWithDifferentModel_shouldBeNotEqual() {
         Car car1 = CarFactory.create("Screech", 700, "Dodge", Color.RED);
-        Car car2 = CarFactory.create("Screech", 700, "BMW", Color.RED);
+        Car car2 = CarFactory.create("Screech", 700, "BMW", new Color(255, 0, 0));
 
         Assert.assertNotEquals(car1, car2);
     }
@@ -39,7 +39,7 @@ public class CarFactoryTest {
     @Test
     public void twoCarsWithDifferentColor_shouldBeNotEqual() {
         Car car1 = CarFactory.create("Scorch", 700, "BMW", Color.GREEN);
-        Car car2 = CarFactory.create("Scorch", 700, "BMW", Color.RED);
+        Car car2 = CarFactory.create("Scorch", 700, "BMW", new Color(255, 0, 0));
 
         Assert.assertNotEquals(car1, car2);
     }
