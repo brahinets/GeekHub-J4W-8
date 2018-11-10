@@ -40,7 +40,7 @@ public class AuthenticationServiceTest {
 
     @Test(expectedExceptions = WrongPasswordException.class)
     public void shouldThrowWrongPasswordException_whenPasswordIsIncorrect() {
-        authenticationService.auth("Username1", "wrong password");
+        authenticationService.auth("Username1", "123456");
     }
 
     @Test

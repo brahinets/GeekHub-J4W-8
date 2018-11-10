@@ -64,7 +64,9 @@ public class SetOperationsTest {
         return new Object[][]{
             {set("3", "1", "2"), set("1", "3", "2")},
             {set("3", "1", "2"), set("1", "3", "2")},
-            {set(), set()}
+            {set(), set()},
+            {set(null, null), set(null, null)},
+            {null, null}
         };
     }
 
@@ -73,7 +75,11 @@ public class SetOperationsTest {
         return new Object[][]{
             {set("3", "1"), set("1", "3", "2")},
             {set(), set("1")},
-            {set("1"), set()}
+            {set("1"), set()},
+            {set(null, null), set()},
+            {set(), set(null, null)},
+            {null, set()},
+            {set(), null}
         };
     }
 
