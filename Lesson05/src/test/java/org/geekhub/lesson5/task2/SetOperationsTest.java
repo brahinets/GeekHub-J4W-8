@@ -5,6 +5,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 public class SetOperationsTest {
@@ -142,6 +145,7 @@ public class SetOperationsTest {
     }
 
     private static Set<Object> set(Object... elements) {
-        return Set.of(elements);
+        Set<Object> objects = new HashSet<>(Arrays.asList(elements));
+        return Collections.unmodifiableSet(objects);
     }
 }
