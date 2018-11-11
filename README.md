@@ -13,3 +13,5 @@ Lesson 3 - Object Oriented Programming
 Lesson 4 - Exceptions
 
 Lesson 5 - Collections Framework
+
+Lesson 6 - Generics, Comparator, Comparable
