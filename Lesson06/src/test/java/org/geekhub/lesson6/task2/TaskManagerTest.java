@@ -77,6 +77,7 @@ public class TaskManagerTest {
         boolean removed = taskManager.removeTasks(yesterday());
 
         assertTrue(removed);
+        assertEquals(taskManager.getAllTasks().size(), 1);
     }
 
     @Test
