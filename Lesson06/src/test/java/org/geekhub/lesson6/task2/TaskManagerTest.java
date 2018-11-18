@@ -48,13 +48,23 @@ public class TaskManagerTest {
     }
 
     @Test(expectedExceptions = TaskLimitExceededException.class)
-    public void shouldAccumulateTasks_beforeLimitExceeded() {
+    public void shouldFail_whenDailyLimitExceeded() {
         int tasksDailyLimit = 1;
         TaskManager taskManager = new TaskManagerImpl(tasksDailyLimit);
 
         taskManager.addTask(new Task("Work", "Drink coffee", today()));
         taskManager.addTask(new Task("Health", "Run marathon", tomorrow()));
         taskManager.addTask(new Task("Home", "Cook dishes", tomorrow()));
+    }
+
+    @Test
+    public void shouldAccumulateTasks_whenDailyLimitNotExceeded() {
+        int tasksDailyLimit = 1;
+        TaskManager taskManager = new TaskManagerImpl(tasksDailyLimit);
+
+        taskManager.addTask(new Task("Work", "Drink coffee", today()));
+        taskManager.addTask(new Task("Health", "Run marathon", tomorrow()));
+        taskManager.addTask(new Task("Home", "Cook dishes", yesterday()));
     }
 
     @Test
