@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.IntStream;
 
 import static java.util.Collections.singletonList;
 import static org.testng.Assert.assertEquals;
@@ -30,6 +32,19 @@ public class TaskManagerTest {
         int tasksCount = taskManager.addTask(new Task("Home", "Clean kitchen", today()));
 
         assertEquals(tasksCount, 1);
+    }
+
+    @Test
+    public void shouldReturnTotalNumberOfTasks_whenNewTaskInserted() {
+        TaskManager taskManager = new TaskManagerImpl();
+        int tasksToInsert = ThreadLocalRandom.current().nextInt(1, 100);
+
+        for(int i = 0; i < tasksToInsert; i++) {
+            taskManager.addTask(new Task("Home", "Clean kitchen-"+i, today()));
+        }
+        int totalTasks = taskManager.addTask(new Task("Home", "Clean kitchen-" + tasksToInsert, today()));
+
+        assertEquals(totalTasks, tasksToInsert + 1);
     }
 
     @Test(expectedExceptions = TaskLimitExceededException.class)
@@ -292,7 +307,7 @@ public class TaskManagerTest {
         assertCollectionEqualsIgnoringOrder(actualAllTasks, expectedAllTasks);
     }
 
-    <T> void assertCollectionEqualsIgnoringOrder(Collection<T> actual, Collection<T> expected) {
+    private <T> void assertCollectionEqualsIgnoringOrder(Collection<T> actual, Collection<T> expected) {
         if (actual == expected) {
             return;
         }
