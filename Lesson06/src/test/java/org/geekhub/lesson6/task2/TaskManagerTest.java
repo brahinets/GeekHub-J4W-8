@@ -58,6 +58,14 @@ public class TaskManagerTest {
     }
 
     @Test
+    public void shouldNotThrowException_whenAddTasksCountEqualsToDailyLimit() {
+        int tasksDailyLimit = 1;
+        TaskManager taskManager = new TaskManagerImpl(tasksDailyLimit);
+
+        taskManager.addTask(new Task("Work", "Drink coffee", today()));
+    }
+
+    @Test
     public void shouldAccumulateTasks_whenDailyLimitNotExceeded() {
         int tasksDailyLimit = 1;
         TaskManager taskManager = new TaskManagerImpl(tasksDailyLimit);
