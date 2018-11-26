@@ -10,16 +10,16 @@ allprojects {
     compileJava.options.encoding = 'UTF-8'
     compileTestJava.options.encoding = 'UTF-8'
 
-    sourceCompatibility = 1.10
-    targetCompatibility = 1.10
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
     clean {
         delete 'build', 'out', 'classes'
     }
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.10.2'
+wrapper {
+    gradleVersion = '5.0-rc-5'
     distributionType = Wrapper.DistributionType.ALL
 }
 
