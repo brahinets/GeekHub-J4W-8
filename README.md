@@ -15,3 +15,5 @@ Lesson 4 - Exceptions
 Lesson 5 - Collections Framework
 
 Lesson 6 - Generics, Comparator, Comparable
+
+Lesson 8 - Functional Programming
