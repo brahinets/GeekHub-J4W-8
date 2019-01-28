@@ -1,0 +1,17 @@
+plugins {
+    id 'war'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile('javax.servlet:javax.servlet-api:4.0.1')
+
+    testCompile libs.test
+}
+
+test {
+    useTestNG {}
+}
