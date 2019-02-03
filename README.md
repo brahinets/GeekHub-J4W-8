@@ -32,4 +32,4 @@ Lesson 13 - Java Server Pages
 
 Lesson 14 - Java Database Connectivity
 
-Lesson 15 - Spring Framework (Lesson17 [example](https://gitlab.com/olexandr.kucher/geekhub7/tree/master/lesson17) and [Spring Framework example](https://gitlab.com/olexandr.kucher/geekhub7/tree/master/lesson17-spring))
+Lesson 15 - Spring Framework
