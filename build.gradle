@@ -33,4 +33,7 @@ ext {
     libs = [
             test : 'org.testng:testng:7.0.0-beta1'
     ]
+    versions = [
+            springframework: '5.1.4.RELEASE'
+    ]
 }
