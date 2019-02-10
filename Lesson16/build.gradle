@@ -1,0 +1,9 @@
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile "org.springframework:spring-webmvc:${versions.springframework}"
+    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+}
