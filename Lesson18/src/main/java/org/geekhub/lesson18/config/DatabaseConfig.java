@@ -15,11 +15,21 @@ import javax.sql.DataSource;
 public class DatabaseConfig {
     @Bean
     @Primary
-    public DataSource dataSource(Environment environment) {
+    public DataSource dataSource1(Environment environment) {
         final SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         dataSource.setDriverClass(org.postgresql.Driver.class);
         dataSource.setUrl(environment.getProperty("database.url"));
         dataSource.setUsername(environment.getProperty("database.username"));
+        dataSource.setPassword(environment.getProperty("database.password"));
+        return dataSource;
+    }
+
+    @Bean
+    public DataSource dataSource2(Environment environment) {
+        final SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
+        dataSource.setDriverClass(org.postgresql.Driver.class);
+        dataSource.setUrl(environment.getProperty("database.url"));
+        dataSource.setUsername("dfgdffkgfhfkhfcgfj");
         dataSource.setPassword(environment.getProperty("database.password"));
         return dataSource;
     }
