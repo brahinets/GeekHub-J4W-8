@@ -39,3 +39,5 @@ Lesson 16 - Spring MVC
 Lesson 17 - Spring Boot
 
 Lesson 18 - Spring Jdbc
+
+Lesson 19 - Hibernate. String Data
