@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<h1>Examples</h1>
+<div style="width: 100%; float:left;" th:each="user: ${users}">
+    <span style="float: left; padding-left: 10px;" th:text="${user.id}"></span>
+    <span style="float: left; padding-left: 10px;" th:text="${user.username}"></span>
+    <span style="float: left; padding-left: 10px;" th:text="${user.firstName}"></span>
+    <span style="float: left; padding-left: 10px;" th:text="${user.lastName}"></span>
+    <span style="float: left; padding-left: 10px;">
+        <form action="/delete" method="post">
+            <input type="hidden" name="id" th:value="${user.id}"/>
+            <input type="submit" value="Delete User"/>
+        </form>
+    </span>
+</div>
+<div style="width: 100%; float: left;">
+    <form action="/add">
+        Username: <input name="username"/>
+        First Name: <input name="firstName"/>
+        Last Name: <input name="lastName"/>
+        <input type="submit" value="Add User"/>
+    </form>
+</div>
+</body>
+</html>
