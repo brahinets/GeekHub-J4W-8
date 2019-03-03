@@ -1,4 +1,4 @@
-package lesson14.source;
+package org.geekhub.lesson14.source;
 
 public interface Source {
     void put(String name, String value);
