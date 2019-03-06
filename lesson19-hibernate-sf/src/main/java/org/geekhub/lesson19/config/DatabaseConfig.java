@@ -1,6 +1,5 @@
 package org.geekhub.lesson19.config;
 
-import org.hibernate.ConnectionReleaseMode;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AvailableSettings;
 import org.springframework.context.annotation.Bean;
@@ -60,7 +59,6 @@ public class DatabaseConfig {
 
         properties.put(AvailableSettings.GENERATE_STATISTICS, useStatistics);
         properties.put(AvailableSettings.USE_STRUCTURED_CACHE, useStatistics);
-        properties.put(AvailableSettings.CONNECTION_HANDLING, ConnectionReleaseMode.ON_CLOSE);
         return properties;
     }
 }
