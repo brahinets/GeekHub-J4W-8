@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Regular User Page</title>
+</head>
+<body>
+    <h1>Regular User Page</h1>
+    <div sec:authorize="isAuthenticated()">
+        <div style="float: left; width: 100%;">You are already logged in.</div>
+        <div style="float: left; width: 100%;">
+            <form th:action="@{/logout}" th:method="post">
+                <input type="submit" value="Log Me Out"/>
+            </form>
+        </div>
+    </div>
+    <div style="float: left; width: 100%">This is a page visible for all users</div>
+</body>
+</html>

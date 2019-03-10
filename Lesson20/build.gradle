@@ -1,0 +1,46 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.flywaydb:flyway-gradle-plugin:5.2.4')
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'org.flywaydb.flyway'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.hibernate:hibernate-core:5.4.1.Final')
+    compile('com.h2database:h2:1.4.198')
+    compile('org.flywaydb:flyway-core:5.2.4')
+}
+
+flyway {
+    url = 'jdbc:h2:mem:lesson20'
+    user = 'user'
+    password = 'pass'
+    cleanDisabled = true
+    baselineOnMigrate = false
+    outOfOrder = true
+    ignoreFutureMigrations = true
+    ignoreMissingMigrations = true
+    locations = ["filesystem:${project.rootDir}/lesson20/src/main/resources/db/migration"]
+}
+
+test {
+    useTestNG {}
+}
