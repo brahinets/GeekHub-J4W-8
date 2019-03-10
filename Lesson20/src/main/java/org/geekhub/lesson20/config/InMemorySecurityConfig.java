@@ -25,9 +25,7 @@ public class InMemorySecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                     .logoutUrl("/logout")
                     .logoutSuccessUrl("/login")
-                .permitAll()
-        .and()
-                .rememberMe();
+                .permitAll();
     }
 
     @Autowired
