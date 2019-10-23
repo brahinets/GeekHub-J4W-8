@@ -54,7 +54,7 @@ public class HomeController {
         return "mav-view";
     }
 
-    @GetMapping(value = "rest")
+    @GetMapping(value = "rest-from-regular")
     @ResponseBody
     public LocalDateTime restEndpoint() {
         return LocalDateTime.now();

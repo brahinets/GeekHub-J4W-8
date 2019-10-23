@@ -9,7 +9,6 @@ import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
-import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import java.util.List;
 
@@ -35,11 +34,6 @@ public class AppConfig extends WebMvcConfigurationSupport {
     @Override
     protected void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
         super.configureHandlerExceptionResolvers(exceptionResolvers);
-    }
-
-    @Override
-    public RequestMappingHandlerMapping requestMappingHandlerMapping() {
-        return super.requestMappingHandlerMapping();
     }
 
     @Autowired
