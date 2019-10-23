@@ -4,6 +4,10 @@ import org.geekhub.lesson16.springmvc.interceptor.ControllerLogInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.HandlerExceptionResolver;
@@ -39,5 +43,12 @@ public class AppConfig extends WebMvcConfigurationSupport {
     @Autowired
     public void dispatcherServlet(DispatcherServlet dispatcherServlet) {
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
+    }
+
+    @Override
+    protected void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(new StringHttpMessageConverter());
+        converters.add(new MappingJackson2HttpMessageConverter());
+        converters.add(new MappingJackson2XmlHttpMessageConverter());
     }
 }
