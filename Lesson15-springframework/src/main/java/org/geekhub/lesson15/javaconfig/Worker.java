@@ -2,7 +2,7 @@ package org.geekhub.lesson15.javaconfig;
 
 import org.geekhub.lesson15.javaconfig.printer.PrimeNumberPrinter;
 
-public class Worker {
+class Worker {
     private PrimeNumberPrinter primeNumberPrinter;
 
     public Worker(PrimeNumberPrinter primeNumberPrinter) {

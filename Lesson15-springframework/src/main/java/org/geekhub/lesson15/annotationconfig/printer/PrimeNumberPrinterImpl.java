@@ -4,16 +4,16 @@ import org.geekhub.lesson15.annotationconfig.logger.LoggerService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PrimeNumberPrinterImpl implements PrimeNumberPrinter {
+class PrimeNumberPrinterImpl implements PrimeNumberPrinter {
     private final LoggerService logger;
 
-    public PrimeNumberPrinterImpl(LoggerService logger) {
+    PrimeNumberPrinterImpl(LoggerService logger) {
         this.logger = logger;
     }
 
     @Override
     public void printPrimeNumbers(final int count) {
-        for (int counter = 0, num = 3; counter < count; num+=2) {
+        for (int counter = 0, num = 3; counter < count; num += 2) {
             if (isPrimeNumber(num)) {
                 counter++;
                 logger.print(num);
