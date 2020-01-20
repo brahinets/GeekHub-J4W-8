@@ -3,7 +3,7 @@ package org.geekhub.lesson15.xmlconfig.logger;
 public class LoggerServiceImpl implements LoggerService {
     @Override
     public void print(Object object) {
-        System.out.println(String.valueOf(object));
+        System.out.println(object);
     }
 
     public void init() {

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("app.properties")
+@PropertySource("classpath:app.properties")
 public class Application {
     @Bean
     public Worker worker(PrimeNumberPrinter primeNumberPrinter) {

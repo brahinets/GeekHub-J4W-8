@@ -39,14 +39,12 @@ public class ServiceLocatorImpl implements ServiceLocator {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public <T> T getBean(Class<T> beanType) {
-        return (T) beanStorage
-                .entrySet()
-                .stream()
-                .filter(entry -> beanType.isAssignableFrom(entry.getKey()))
-                .findFirst()
-                .map(Map.Entry::getValue)
-                .orElse(null);
+        for (Map.Entry<Class<?>, Object> entry : beanStorage.entrySet()) {
+            if (beanType.isAssignableFrom(entry.getKey())) {
+                return (T) entry.getValue();
+            }
+        }
+        throw new IllegalStateException("Bean with type=" + beanType + " has not been found");
     }
 }

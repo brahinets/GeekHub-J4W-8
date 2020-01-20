@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("app.properties")
+@PropertySource("classpath:app.properties")
 @ComponentScan("org.geekhub.lesson15.annotationconfig")
 public class Application {
     public static void main(String[] args) {
