@@ -23,8 +23,8 @@ public class UserRepositoryImpl implements UserRepository {
                 new MapSqlParameterSource("userId", id),
                 (rs, rowNum) -> {
                     User actor1 = new User();
-                    actor1.setFirstName(rs.getString("first_name"));
-                    actor1.setLastName(rs.getString("last_name"));
+                    actor1.setFirstName(rs.getString("firstName"));
+                    actor1.setLastName(rs.getString("lastName"));
                     return actor1;
                 });
     }
