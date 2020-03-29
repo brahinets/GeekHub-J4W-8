@@ -1,4 +1,4 @@
-package org.geekhub.lesson19.db.persistence;
+package org.geekhub.lesson19.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
