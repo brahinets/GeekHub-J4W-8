@@ -1,6 +1,5 @@
-package org.geekhub.lesson19.repository;
+package org.geekhub.lesson19.license;
 
-import org.geekhub.lesson19.db.persistence.License;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

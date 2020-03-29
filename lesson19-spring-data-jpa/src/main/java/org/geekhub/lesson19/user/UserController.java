@@ -1,11 +1,11 @@
-package org.geekhub.lesson19.controller;
+package org.geekhub.lesson19.user;
 
-import org.geekhub.lesson19.db.persistence.License;
-import org.geekhub.lesson19.db.persistence.User;
-import org.geekhub.lesson19.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.geekhub.lesson19.license.License;
+import org.geekhub.lesson19.user.User;
+import org.geekhub.lesson19.user.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -13,11 +13,10 @@ import java.time.LocalTime;
 import java.util.Collections;
 
 @Controller
-public class ExamplesController {
+public class UserController {
     private final UserService userService;
 
-    @Autowired
-    public ExamplesController(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
@@ -28,22 +27,17 @@ public class ExamplesController {
     }
 
     @RequestMapping("add")
-    public String add(@RequestParam String username, @RequestParam String firstName, @RequestParam String lastName) {
-        final User user = new User();
-        user.setUsername(username);
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
+    public String add(@ModelAttribute User user) {
         final License license = new License("Licence " + LocalTime.now());
         user.setLicenses(Collections.singletonList(license));
         license.setUser(user);
-
         userService.save(user);
         return "redirect:/";
     }
 
     @RequestMapping("delete")
     public String delete(@RequestParam Integer id) {
-        userService.findBy(id).ifPresent(userService::delete);
+        userService.deleteById(id);
         return "redirect:/";
     }
 }

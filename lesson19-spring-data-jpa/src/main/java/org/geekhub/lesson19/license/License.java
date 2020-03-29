@@ -1,5 +1,6 @@
-package org.geekhub.lesson19.db.persistence;
+package org.geekhub.lesson19.license;
 
+import org.geekhub.lesson19.user.User;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.CascadeType;

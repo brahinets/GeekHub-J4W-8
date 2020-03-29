@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @SpringBootApplication
-@EnableJpaRepositories("org.geekhub.lesson19.repository")
+@EnableJpaRepositories("org.geekhub.lesson19")
 @EnableTransactionManagement
 public class Application extends WebMvcConfigurationSupport {
     public static void main(String[] args) {
