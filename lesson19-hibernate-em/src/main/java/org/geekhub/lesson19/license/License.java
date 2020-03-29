@@ -1,5 +1,6 @@
-package org.geekhub.lesson19.db.persistence;
+package org.geekhub.lesson19.license;
 
+import org.geekhub.lesson19.user.User;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.Entity;
@@ -18,12 +19,6 @@ public class License implements Persistable<Integer> {
     private Integer id;
     private String name;
     private User user;
-
-    public License() {}
-
-    public License(String name) {
-        this.name = name;
-    }
 
     @Id
     @Override

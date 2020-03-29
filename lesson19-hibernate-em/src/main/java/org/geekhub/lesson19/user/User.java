@@ -1,8 +1,7 @@
-package org.geekhub.lesson19.db.persistence;
+package org.geekhub.lesson19.user;
 
-import org.geekhub.lesson19.listener.UserListener;
+import org.geekhub.lesson19.license.License;
 import org.hibernate.annotations.Fetch;
-import org.hibernate.hql.spi.id.persistent.PersistentTableBulkIdStrategy;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.Entity;

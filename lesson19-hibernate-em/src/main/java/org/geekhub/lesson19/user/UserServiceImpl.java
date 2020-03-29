@@ -1,8 +1,5 @@
-package org.geekhub.lesson19.service;
+package org.geekhub.lesson19.user;
 
-import org.geekhub.lesson19.db.persistence.User;
-import org.geekhub.lesson19.repository.user.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -19,13 +16,8 @@ class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User> findBy(Integer id) {
-        return userRepository.findBy(id);
-    }
-
-    @Override
-    public Optional<User> findBy(String username) {
-        return userRepository.findBy(username);
+    public Optional<User> findBy(int userId) {
+        return userRepository.findBy(userId);
     }
 
     @Override
@@ -39,7 +31,8 @@ class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(User user) {
-        userRepository.delete(user);
+    public void deleteById(int userId) {
+        Optional<User> user = userRepository.findBy(userId);
+        user.ifPresent(userRepository::delete);
     }
 }

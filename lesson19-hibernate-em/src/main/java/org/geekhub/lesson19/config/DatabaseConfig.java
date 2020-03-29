@@ -35,7 +35,7 @@ public class DatabaseConfig {
         final LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         factory.setJpaProperties(hibernateProperties(fetchSize, batchSize));
-        factory.setPackagesToScan("com.geekhub.lesson19.db.persistence");
+        factory.setPackagesToScan("org.geekhub.lesson19");
         factory.setDataSource(dataSource);
         factory.afterPropertiesSet();
         return factory.getObject();

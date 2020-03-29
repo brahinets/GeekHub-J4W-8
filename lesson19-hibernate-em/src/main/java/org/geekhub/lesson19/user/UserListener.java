@@ -1,6 +1,5 @@
-package org.geekhub.lesson19.listener;
+package org.geekhub.lesson19.user;
 
-import org.geekhub.lesson19.db.persistence.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

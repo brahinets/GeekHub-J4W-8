@@ -1,18 +1,17 @@
-package org.geekhub.lesson19.repository.user;
+package org.geekhub.lesson19.user;
 
-import org.geekhub.lesson19.db.persistence.User;
-import org.geekhub.lesson19.repository.GeneralRepositoryImpl;
+import org.geekhub.lesson19.config.GeneralRepository;
+import org.geekhub.lesson19.config.GeneralRepositoryImpl;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-class UserRepositoryImpl extends GeneralRepositoryImpl<User, Integer> implements UserRepository {
-    UserRepositoryImpl() {
+class UserRepository extends GeneralRepositoryImpl<User, Integer> implements GeneralRepository<User, Integer> {
+    UserRepository() {
         super(User.class);
     }
 
-    @Override
     public Optional<User> findBy(String username) {
         return entityManager.createQuery("SELECT u FROM user u WHERE u.username = :username", User.class)
                 .setParameter("username", username)

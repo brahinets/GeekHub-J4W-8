@@ -1,4 +1,4 @@
-package org.geekhub.lesson19.repository;
+package org.geekhub.lesson19.config;
 
 import org.springframework.data.domain.Persistable;
 
