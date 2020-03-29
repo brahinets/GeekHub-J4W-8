@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public class UserRepositoryImpl extends GeneralRepositoryImpl<User, Integer> implements UserRepository {
-    public UserRepositoryImpl() {
+class UserRepositoryImpl extends GeneralRepositoryImpl<User, Integer> implements UserRepository {
+    UserRepositoryImpl() {
         super(User.class);
     }
 

@@ -1,6 +1,6 @@
 package org.geekhub.lesson19.repository;
 
-import org.geekhub.lesson19.db.persistence.Persistable;
+import org.springframework.data.domain.Persistable;
 
 import java.io.Serializable;
 import java.util.List;

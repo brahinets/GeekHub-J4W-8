@@ -1,5 +1,7 @@
 package org.geekhub.lesson19.db.persistence;
 
+import org.springframework.data.domain.Persistable;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "license")
@@ -49,5 +52,11 @@ public class License implements Persistable<Integer> {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Transient
+    @Override
+    public boolean isNew() {
+        return null == getId();
     }
 }

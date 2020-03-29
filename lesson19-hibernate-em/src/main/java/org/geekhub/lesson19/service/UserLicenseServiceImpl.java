@@ -12,12 +12,11 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserLicenseServiceImpl implements UserLicenseService {
+class UserLicenseServiceImpl implements UserLicenseService {
     private final UserRepository userRepository;
     private final LicenseRepository licenseRepository;
 
-    @Autowired
-    public UserLicenseServiceImpl(UserRepository userRepository, LicenseRepository licenseRepository) {
+    UserLicenseServiceImpl(UserRepository userRepository, LicenseRepository licenseRepository) {
         this.userRepository = userRepository;
         this.licenseRepository = licenseRepository;
     }
@@ -32,10 +31,10 @@ public class UserLicenseServiceImpl implements UserLicenseService {
     @Override
     public void delete(User user) {
         final List<License> licenses = user.getLicenses();
-        userRepository.delete(user);
-        if (true) {
-            throw new RuntimeException();
-        }
         licenses.forEach(licenseRepository::delete);
+        if (true) {
+            throw new RuntimeException("Test exception");
+        }
+        userRepository.delete(user);
     }
 }

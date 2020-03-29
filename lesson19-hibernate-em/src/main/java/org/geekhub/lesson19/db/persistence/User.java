@@ -2,6 +2,8 @@ package org.geekhub.lesson19.db.persistence;
 
 import org.geekhub.lesson19.listener.UserListener;
 import org.hibernate.annotations.Fetch;
+import org.hibernate.hql.spi.id.persistent.PersistentTableBulkIdStrategy;
+import org.springframework.data.domain.Persistable;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -11,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.List;
 
 @Entity
@@ -66,5 +69,11 @@ public class User implements Persistable<Integer> {
 
     public void setLicenses(List<License> licenses) {
         this.licenses = licenses;
+    }
+
+    @Transient
+    @Override
+    public boolean isNew() {
+        return null == getId();
     }
 }

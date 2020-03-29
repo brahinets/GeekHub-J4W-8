@@ -1,6 +1,6 @@
 package org.geekhub.lesson19.repository;
 
-import org.geekhub.lesson19.db.persistence.Persistable;
+import org.springframework.data.domain.Persistable;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -38,7 +38,7 @@ public abstract class GeneralRepositoryImpl<T extends Persistable<PK>, PK extend
 
     @Override
     public T save(T user) {
-        if (null == user.getId()) {
+        if (user.isNew()) {
             entityManager.persist(user);
             return user;
         } else {

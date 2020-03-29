@@ -17,7 +17,6 @@ public class ExamplesController {
     private final UserService userService;
     private final UserLicenseService userLicenseService;
 
-    @Autowired
     public ExamplesController(UserService userService, UserLicenseService userLicenseService) {
         this.userService = userService;
         this.userLicenseService = userLicenseService;

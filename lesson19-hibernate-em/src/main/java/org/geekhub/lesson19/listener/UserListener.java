@@ -1,18 +1,22 @@
 package org.geekhub.lesson19.listener;
 
 import org.geekhub.lesson19.db.persistence.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
 
 public class UserListener {
+    private static final Logger LOG = LoggerFactory.getLogger(UserListener.class);
+
     @PrePersist
     public void prePersist(User user) {
-        System.out.println("username: " + user.getUsername() + ", id: " + user.getId());
+        LOG.info("username: {}, id: {}", user.getUsername(), user.getId());
     }
 
     @PostPersist
     public void postPersist(User user) {
-        System.out.println("username: " + user.getUsername() + ", id: " + user.getId());
+        LOG.info("username: {}, id: {}", user.getUsername(), user.getId());
     }
 }

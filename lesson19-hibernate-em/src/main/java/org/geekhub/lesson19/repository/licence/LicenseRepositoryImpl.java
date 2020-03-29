@@ -5,8 +5,8 @@ import org.geekhub.lesson19.repository.GeneralRepositoryImpl;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class LicenseRepositoryImpl extends GeneralRepositoryImpl<License, Integer> implements LicenseRepository {
-    public LicenseRepositoryImpl() {
+class LicenseRepositoryImpl extends GeneralRepositoryImpl<License, Integer> implements LicenseRepository {
+    LicenseRepositoryImpl() {
         super(License.class);
     }
 }
