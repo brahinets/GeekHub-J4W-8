@@ -1,0 +1,30 @@
+buildscript {
+    ext {
+        springBootVersion = '2.2.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jdbc')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('com.h2database:h2:1.4.200')
+    compile('org.flywaydb:flyway-core:6.3.2')
+}
+
+test {
+    useTestNG {}
+}
