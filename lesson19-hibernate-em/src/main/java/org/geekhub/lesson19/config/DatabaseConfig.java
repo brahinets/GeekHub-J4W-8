@@ -23,8 +23,10 @@ public class DatabaseConfig {
     @Primary
     public DataSource dataSource() {
         final SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
-        dataSource.setDriverClass(org.h2.Driver.class);
-        dataSource.setUrl("jdbc:h2:mem:lesson19;DB_CLOSE_DELAY=-1");
+        dataSource.setDriverClass(org.postgresql.Driver.class);
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/test_db");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("password");
         return dataSource;
     }
 
@@ -53,11 +55,10 @@ public class DatabaseConfig {
         final Properties properties = new Properties();
         properties.put(AvailableSettings.ORDER_INSERTS, true);
         properties.put(AvailableSettings.ORDER_UPDATES, true);
-        properties.put(AvailableSettings.HBM2DDL_AUTO, "create-drop"); //do not do this on real projects
         properties.put(AvailableSettings.AUTOCOMMIT, false);
         properties.put(AvailableSettings.ENABLE_LAZY_LOAD_NO_TRANS, true);
 
-        properties.put(AvailableSettings.DIALECT, org.hibernate.dialect.H2Dialect.class.getName());
+        properties.put(AvailableSettings.DIALECT, org.hibernate.dialect.PostgreSQL10Dialect.class.getName());
         properties.put(AvailableSettings.SHOW_SQL, true);
         properties.put(AvailableSettings.FORMAT_SQL, true);
         properties.put(AvailableSettings.USE_SQL_COMMENTS, true);

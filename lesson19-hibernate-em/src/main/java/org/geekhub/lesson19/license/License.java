@@ -1,6 +1,8 @@
 package org.geekhub.lesson19.license;
 
 import org.geekhub.lesson19.user.User;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.Entity;
@@ -40,7 +42,8 @@ public class License implements Persistable<Integer> {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id")
+    @Fetch(FetchMode.SELECT)
     public User getUser() {
         return user;
     }

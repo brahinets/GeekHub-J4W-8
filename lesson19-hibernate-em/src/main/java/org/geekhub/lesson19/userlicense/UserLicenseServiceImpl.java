@@ -26,6 +26,11 @@ class UserLicenseServiceImpl implements UserLicenseService {
     }
 
     @Override
+    public List<License> findAllLicenses() {
+        return licenseService.findAll();
+    }
+
+    @Override
     public void save(User user, License license) {
         final User savedUser = userService.save(user);
         license.setUser(savedUser);

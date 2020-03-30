@@ -8,6 +8,8 @@ import java.util.List;
 public interface UserLicenseService {
     List<User> findAllUsers();
 
+    List<License> findAllLicenses();
+
     void save(User user, License license);
 
     void deleteUserById(Integer id);

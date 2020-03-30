@@ -21,6 +21,9 @@ public class UserLicenseController {
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("users", userLicenseService.findAllUsers());
+        //will use joins to read User if FetchMode.JOIN with FetchType.EAGER or FetchType.LAZY used for License#getUser
+        //will use additional select to read User if @Fetch(FetchMode.SELECT) with FetchType.LAZY added to License#getUser
+        userLicenseService.findAllLicenses();
         return "home";
     }
 
