@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="DEFAULT_LOG_PATTERN" value="%d{yy-MM-dd HH:mm:ss.SSS} %-5level [%logger{0}] - %m%n"/>
+    <appender name="logstash" class="net.logstash.logback.appender.LogstashSocketAppender">
+        <host>localhost</host>
+        <port>4560</port>
+        <layout class="net.logstash.logback.layout.LogstashLayout">
+            <provider class="net.logstash.logback.composite.loggingevent.ArgumentsJsonProvider"/>
+            <shortenedLoggerNameLength>30</shortenedLoggerNameLength>
+        </layout>
+    </appender>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${DEFAULT_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="logstash"/>
+        <appender-ref ref="console"/>
+    </root>
+</configuration>

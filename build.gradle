@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'idea'
+    id "org.sonarqube" version "2.8"
 }
 
 allprojects {
@@ -42,4 +43,10 @@ ext {
             springframework: '5.1.4.RELEASE',
             springboot: '2.1.3.RELEASE'
     ]
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "GH8"
+    }
 }
